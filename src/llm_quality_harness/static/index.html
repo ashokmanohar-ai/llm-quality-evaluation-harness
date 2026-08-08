@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="LLM Quality Evaluation Harness dashboard" />
+    <title>LLM Quality Evaluation Harness</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav><span class="brand">LLM-QE</span><span class="badge">Governed evaluation</span></nav>
+      <div class="hero-copy">
+        <p class="eyebrow">ENTERPRISE AI QUALITY ENGINEERING</p>
+        <h1>Turn model behavior into measurable release evidence.</h1>
+        <p class="intro">Evaluate correctness, RAG grounding, safety, structure, latency, and cost through one auditable quality gate.</p>
+        <button id="run-demo" type="button">Run reference suite</button>
+        <span id="run-state" role="status" aria-live="polite">Ready</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="cards" aria-label="Evaluation summary">
+        <article><span>Suite score</span><strong id="suite-score">—</strong></article>
+        <article><span>Cases passed</span><strong id="cases-passed">—</strong></article>
+        <article><span>Safety pass rate</span><strong id="safety-rate">—</strong></article>
+        <article><span>P95 latency</span><strong id="latency">—</strong></article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div><p class="eyebrow">QUALITY SIGNALS</p><h2>Metric scorecard</h2></div>
+          <span id="gate-pill" class="gate neutral">Not evaluated</span>
+        </div>
+        <div id="metrics" class="metrics"><p>Run the reference suite to populate results.</p></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading"><div><p class="eyebrow">TRACEABILITY</p><h2>Case-level evidence</h2></div></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Case</th><th>Tags</th><th>Score</th><th>Status</th><th>Schema</th></tr></thead>
+            <tbody id="case-results"><tr><td colspan="5">No evaluation run yet.</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer>Provider-neutral • deterministic baseline • policy versioned • CI ready</footer>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
+

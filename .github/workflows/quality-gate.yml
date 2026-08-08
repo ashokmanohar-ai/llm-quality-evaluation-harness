@@ -1,0 +1,79 @@
+name: AI quality gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python-quality:
+    name: Python, evaluation, and security
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Validate dataset
+        run: python scripts/validate_dataset.py datasets/golden.json
+      - name: Lint
+        run: python -m ruff check src tests scripts
+      - name: Unit and API tests
+        run: python -m pytest --cov --cov-report=term --cov-report=xml:reports/coverage.xml
+      - name: Run offline evaluation
+        run: python -m llm_quality_harness.cli evaluate --dataset datasets/golden.json --output reports/evaluation.json
+      - name: Enforce release gate
+        run: python -m llm_quality_harness.cli gate --results reports/evaluation.json --config config/quality-gates.yaml
+      - name: Secret scan
+        run: python scripts/secret_scan.py .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: python-quality-evidence
+          path: |
+            reports/evaluation.json
+            reports/coverage.xml
+          retention-days: 14
+
+  browser-evidence:
+    name: Playwright UI and API evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install application
+        run: python -m pip install -e .
+      - name: Install Playwright
+        run: npm ci && npx playwright install --with-deps chromium
+      - name: Run end-to-end tests
+        run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-evidence
+          path: |
+            playwright-report/
+            test-results/
+            reports/playwright-junit.xml
+          retention-days: 14
+

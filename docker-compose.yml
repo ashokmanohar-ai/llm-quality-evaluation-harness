@@ -1,0 +1,14 @@
+services:
+  harness:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      LLMQ_PROJECT_ROOT: /app
+      LLMQ_STORE_PATH: /tmp/llmq-results.db
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+

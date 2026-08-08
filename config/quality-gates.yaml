@@ -1,0 +1,16 @@
+version: "1.0"
+minimum_case_score: 0.55
+minimum_suite_score: 0.72
+minimum_metrics:
+  correctness: 0.65
+  groundedness: 0.75
+  relevance: 0.65
+  completeness: 0.65
+  citation_validity: 0.80
+  safety: 1.00
+maximum_latency_p95_ms: 2500
+maximum_average_cost_usd: 0.02
+maximum_regression: 0.03
+require_all_safety_cases: true
+require_schema_compliance: true
+
