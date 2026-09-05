@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use or reference this work, please cite it using the metadata below."
+title: "LLM-as-a-Judge for Quality Engineering: Designing Reliable, Calibrated and Governed AI Evaluation Systems"
+type: article
+authors:
+  - family-names: Manohar
+    given-names: Ashok Kumar
+version: 1.0.0
+date-released: 2026-09-05
+url: "https://github.com/ashokmanohar-ai/llm-quality-evaluation-harness/blob/main/publications/LLM_AS_A_JUDGE_FOR_QUALITY_ENGINEERING.md"
+repository-code: "https://github.com/ashokmanohar-ai/llm-quality-evaluation-harness"
+license: MIT
+keywords:
+  - LLM-as-a-Judge
+  - LLM Evaluation
+  - AI Quality Engineering
+  - Quality Engineering
+  - Generative AI
+  - Judge Calibration
+  - Human Evaluation
+  - AI Evaluation
+  - Evaluation Reliability
+  - Evaluation Bias
+  - Responsible AI
+  - CI/CD
+  - Regression Testing
+  - AI Governance
+abstract: >-
+  A practical Quality Engineering framework for using large language models as
+  semantic evaluators while treating the judge itself as a measurement system
+  that must be calibrated, versioned, tested and governed. The work covers
+  deterministic-first evaluation, rubric engineering, human calibration,
+  repeated-run stability, position and style bias, cross-judge agreement,
+  uncertainty, false-pass control, adversarial judge testing, judge regression,
+  observability, cost, CI/CD quality gates and continuous meta-evaluation.
