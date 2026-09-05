@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use or reference this work, please cite it using the metadata below."
+title: "LLM Evaluation for Quality Engineers: From Functional Testing to AI Quality Metrics"
+type: article
+authors:
+  - family-names: Manohar
+    given-names: Ashok Kumar
+version: 1.0.0
+date-released: 2026-09-05
+url: "https://github.com/ashokmanohar-ai/llm-quality-evaluation-harness/blob/main/WHITEPAPER.md"
+repository-code: "https://github.com/ashokmanohar-ai/llm-quality-evaluation-harness"
+license: MIT
+keywords:
+  - Large Language Models
+  - LLM Evaluation
+  - Quality Engineering
+  - AI Quality Engineering
+  - Generative AI
+  - AI Testing
+  - Groundedness
+  - Hallucination Testing
+  - LLM-as-a-Judge
+  - Responsible AI
+  - AI Governance
+  - CI/CD
+  - Regression Testing
+abstract: >-
+  A practical Quality Engineering framework for evaluating large language model
+  applications across correctness, relevance, completeness, groundedness,
+  citations, safety, privacy, refusal behavior, structured output, robustness,
+  stability, latency, token usage, cost and regression risk. The work advocates
+  versioned evaluation datasets, deterministic-first metrics, calibrated model
+  judges, candidate-versus-baseline comparison, explicit release policies and
+  CI/CD quality gates.
