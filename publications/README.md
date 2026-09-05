@@ -28,10 +28,25 @@ Focus: deterministic-first semantic evaluation, rubric engineering, judge calibr
 
 ---
 
+## 3. Testing Hallucinations in Generative AI
+
+**Testing Hallucinations in Generative AI: Detection, Measurement, Root Cause and Release Controls**
+
+- [Read the white paper](TESTING_HALLUCINATIONS_IN_GENERATIVE_AI.md)
+- [Citation metadata](CITATION_TESTING_HALLUCINATIONS_IN_GENERATIVE_AI.cff)
+- Version: 1.0
+- Published: September 2026
+
+Focus: claim-level hallucination testing; unsupported and contradicted claims; fabricated entities, citations and actions; answerability and abstention; numerical, temporal and stale claims; confidence language; deterministic-first validation; calibrated semantic judges; hallucination density and severity; RAG and agentic root-cause localization; production-to-regression learning; baseline comparison; repeated-run stability; observability; missing-evidence semantics; and CI/CD release controls.
+
+> **Hallucination engineering paper:** this publication treats hallucination as a measurable software-quality problem by connecting claim-level evidence, failure classification, root-cause localization, mitigation testing and release governance.
+
+---
+
 ## Reference Implementation
 
-Both publications are supported by the open-source [LLM Quality Evaluation Harness](https://github.com/ashokmanohar-ai/llm-quality-evaluation-harness), which demonstrates versioned evaluation datasets, deterministic metrics, hard safety and schema controls, candidate-versus-baseline comparison, provider-neutral adapters, retained evidence, governance artifacts and CI/CD quality gates.
+All three publications are supported by the open-source [LLM Quality Evaluation Harness](https://github.com/ashokmanohar-ai/llm-quality-evaluation-harness), which demonstrates versioned evaluation datasets, deterministic metrics, groundedness and hallucination-oriented checks, hard safety and schema controls, candidate-versus-baseline comparison, provider-neutral adapters, retained evidence, governance artifacts and CI/CD quality gates.
 
-Related repositories extend these ideas to [RAG evaluation](https://github.com/ashokmanohar-ai/rag-llm-evaluation-lab), [AI agent evaluation](https://github.com/ashokmanohar-ai/ai-agent-evaluation-framework), and [AI observability](https://github.com/ashokmanohar-ai/phoenix-llm-observability).
+Related repositories extend these ideas to [RAG evaluation](https://github.com/ashokmanohar-ai/rag-llm-evaluation-lab), [AI agent evaluation](https://github.com/ashokmanohar-ai/ai-agent-evaluation-framework), [AI observability](https://github.com/ashokmanohar-ai/phoenix-llm-observability), [prompt testing](https://github.com/ashokmanohar-ai/promptfoo-llm-testing), and [continuous quality engineering](https://github.com/ashokmanohar-ai/continuous-quality-engineering).
 
 > These are independent technical white papers and are not peer-reviewed academic publications, compliance certifications, security certifications, or statements of production readiness.
