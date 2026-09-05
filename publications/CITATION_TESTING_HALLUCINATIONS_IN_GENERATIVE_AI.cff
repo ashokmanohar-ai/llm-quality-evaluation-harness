@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use or reference this work, please cite it using the metadata below."
+title: "Testing Hallucinations in Generative AI: Detection, Measurement, Root Cause and Release Controls"
+type: article
+authors:
+  - family-names: Manohar
+    given-names: Ashok Kumar
+version: 1.0.0
+date-released: 2026-09-05
+url: "https://github.com/ashokmanohar-ai/llm-quality-evaluation-harness/blob/main/publications/TESTING_HALLUCINATIONS_IN_GENERATIVE_AI.md"
+repository-code: "https://github.com/ashokmanohar-ai/llm-quality-evaluation-harness"
+license: MIT
+keywords:
+  - Generative AI Hallucination
+  - Hallucination Testing
+  - Confabulation
+  - Misinformation
+  - Unsupported Claims
+  - Groundedness
+  - Citation Integrity
+  - AI Quality Engineering
+  - LLM Evaluation
+  - RAG Evaluation
+  - AI Agent Evaluation
+  - Failure Localization
+  - LLM-as-a-Judge
+  - AI Observability
+  - CI/CD
+  - Quality Gates
+  - AI Governance
+abstract: >-
+  An evidence-driven Quality Engineering framework for testing hallucinations in
+  Generative AI systems. The work defines a
+  Claim-Evidence-Classify-Localize-Control-Gate model spanning unsupported and
+  contradicted claims, fabricated entities, sources and actions, numerical and
+  temporal errors, answerability, abstention, confidence language, deterministic
+  validation, calibrated semantic judges, claim-level metrics, severity,
+  hallucination root-cause localization, RAG and agentic failure modes,
+  production-to-regression learning, baseline comparison, repeated-run
+  stability, observability, missing-evidence handling and CI/CD release gates.
