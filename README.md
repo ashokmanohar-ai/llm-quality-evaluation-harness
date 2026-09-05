@@ -9,6 +9,16 @@ A production-style, provider-neutral framework for measuring and governing the q
 
 The reference MVP runs completely offline with synthetic data and no model API key. Teams can add their own model, SDK, endpoint, or experiment adapter without replacing the evaluator, policies, evidence model, or CI gates.
 
+## 📄 Technical White Paper
+
+**[LLM Evaluation for Quality Engineers: From Functional Testing to AI Quality Metrics](WHITEPAPER.md)**
+
+A practitioner-focused white paper showing how traditional software testing evolves for probabilistic AI systems. It covers correctness, relevance, completeness, groundedness, citation integrity, safety, privacy, refusal quality, structured output, LLM-as-a-Judge, human evaluation, repeated-run analysis, latency, token usage, cost, regression testing, governance, and CI/CD quality gates.
+
+> **Core principle:** define an explicit quality contract, evaluate against versioned evidence, keep deterministic checks deterministic, calibrate semantic judges, and prevent critical risks from being averaged away.
+
+Citation metadata is available in [`CITATION.cff`](CITATION.cff).
+
 ## Why this repository exists
 
 Conventional test automation checks whether software followed deterministic rules. AI quality engineering must also measure probabilistic behavior, dataset coverage, groundedness, safety, structured outputs, latency, cost, uncertainty, and change over time.
@@ -241,4 +251,3 @@ See the [roadmap](docs/ROADMAP.md) for calibrated judges, red-team packs, OpenTe
 ## License
 
 MIT. See [LICENSE](LICENSE).
-
